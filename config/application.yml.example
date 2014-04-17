@@ -16,3 +16,4 @@ production:
   NEWRELIC_DISPATCHER: 'Puma'
   SESSION_KEY: '_Genuineblue_session'
   SECRET_TOKEN: 'Be change this to `rake secret` result'
+  HOST: 'genuineblue.herokuapp.com'
