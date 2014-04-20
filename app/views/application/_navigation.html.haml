@@ -8,6 +8,7 @@
       = link_to "Genuineblue", root_path, :class => 'navbar-brand'
 
     .collapse.navbar-collapse
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          = link_to 'Menu', '#'
+      - if !user_signed_in?
+        = render('navigation_not_singed_in')
+      - elsif current_user.ready?
+        = render('navigation_singed_in')

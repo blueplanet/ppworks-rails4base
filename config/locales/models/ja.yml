@@ -6,6 +6,12 @@ ja:
   activerecord:
     models:
     attributes:
+      user:
+        name: '名前'
+        email: 'メール'
+        password: 'パスワード'
+        password_confirmation: '(確認)'
+        current_password: '現在のパスワード'
     errors:
       models:
   enumerize:

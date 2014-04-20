@@ -1,0 +1,15 @@
+- content_for :page_header do
+  .container
+    %h2= t('.title')
+
+.container
+  .panel.panel-danger.section
+    .panel-heading
+      = t('.byebye-heading')
+    .panel-body
+      = t('.byebye-body')
+
+  = link_to t('.withdraw'), registration_path(:user),
+      class: 'btn btn-danger withdraw-btn',
+      data: {confirm: t('.withdraw_confirm')},
+      method: :delete

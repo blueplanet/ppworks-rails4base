@@ -1,0 +1,18 @@
+.container
+  .col-sm-6.col-sm-offset-3
+    .well.section
+      %h2= t('.title')
+      = simple_form_for(resource,
+        as: resource_name,
+        url: unlock_path(resource_name),
+        html: {class: 'form-horizontal', method: :post}) do |f|
+        = f.error_notification
+        = f.full_error :unlock_token
+
+        = f.input :email, required: true, autofocus: true
+
+        .form-group
+          .col-sm-9.col-sm-offset-3
+            = f.button :submit, t('.submit'), class: 'btn btn-warning pull-right'
+
+      = render 'devise/shared/links'

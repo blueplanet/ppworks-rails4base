@@ -1,0 +1,11 @@
+%ul.nav.navbar-nav.navbar-right
+  %li
+    = link_to new_user_session_path do
+      %i.fa.fa-sign-in
+      = t('nav.devise.sessions.new')
+
+  %li
+    = link_to new_user_registration_path do
+      %i.fa.fa-check
+      = t('nav.devise.registrations.new')
+  = render('language_selector')

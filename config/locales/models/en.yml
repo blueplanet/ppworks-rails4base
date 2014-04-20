@@ -6,6 +6,8 @@ en:
   activerecord:
     models:
     attributes:
+      user:
+        password_confirmation: 'Confirmation'
     errors:
       models:
   enumerize:

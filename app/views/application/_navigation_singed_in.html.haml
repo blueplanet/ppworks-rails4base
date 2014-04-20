@@ -1,0 +1,14 @@
+%ul.nav.navbar-nav.navbar-right
+  %li.dropdown
+    %a.dropdown-toggle{data: {toggle: 'dropdown'}}
+      = current_user.name
+      %b.caret
+    %ul.dropdown-menu
+      %li
+        = link_to edit_user_registration_path do
+          %i.fa.fa-edit
+          = t('nav.user.edit')
+      %li
+        = link_to destroy_user_session_path, method: :delete do
+          %i.fa.fa-sign-out
+          = t('nav.devise.sessions.destroy')
