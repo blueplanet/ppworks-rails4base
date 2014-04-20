@@ -10,11 +10,19 @@ input[type=text], input[type=email], input[type=password], textarea
   background-color: rgba(black, 0.1)
   border: 1px solid rgba(black, 0.1)
 
+a
+  &:hover
+    +transition-duration(1.0s)
+    color: lighten($link-color, 40%)
+
+
 .no-border
   border-color: transparent
 
 .section
   margin-bottom: $margin
+  &:first-child
+    margin-top: $margin
   p
     margin-bottom: $margin-quater
 
