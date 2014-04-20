@@ -14,7 +14,7 @@
     = render('ga')
     = favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png'
     = favicon_link_tag
-  %body{class: "#{I18n.locale} #{yield(:body_class)} #{controller_name} #{action_name}"}
+  %body{class: "#{I18n.locale} #{yield(:body_class)}"}
     = render 'navigation'
     - if content_for?(:page_header)
       .page-header
