@@ -65,7 +65,7 @@ RSpec.configure do |config|
     if example.metadata[:js]
       page.driver.resize(1024, 2048)
     end
-    I18n.locale = (ENV['CI'] == 'ON') ? :en : :ja
+    I18n.locale = :en
     if Capybara.current_driver == :poltergeist
       # poltergeistでは
       # Capybara::Poltergeist::Driver.new で指定できないので
