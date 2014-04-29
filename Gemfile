@@ -11,6 +11,7 @@ gem 'pg'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-github'
 
 # APIs
 gem 'bugsnag'
