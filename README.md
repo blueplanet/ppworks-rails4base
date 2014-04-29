@@ -65,3 +65,47 @@ heroku addons:add mailtrap
 heroku config:set RACK_ENV=staging RAILS_ENV=staging
 rake figaro:heroku\[Genuineblue-stg\]
 ```
+
+## s3
+
+create 'Genuineblue' bucket on 'us-east-1'
+
+### IAM
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "s3:ListBucket",
+        "s3:GetBucket*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::Genuineblue"
+      ],
+      "Effect": "Allow"
+    },
+    {
+      "Action": [
+        "s3:DeleteObject*",
+        "s3:GetObject*",
+        "s3:PutObject*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::Genuineblue/*"
+      ],
+      "Effect": "Allow"
+    }
+  ]
+}
+```
+
+Fill config/application.yml
+
+```
+AWS_ACCESS_KEY_ID: ''
+AWS_SECRET_ACCESS_KEY: ''
+AWS_REGION: 'us-east-1'
+AWS_S3_BUCKET: 'Genuineblue'
+```
