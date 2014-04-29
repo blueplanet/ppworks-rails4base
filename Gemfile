@@ -12,6 +12,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
+gem 'omniauth-facebook'
 
 # APIs
 gem 'bugsnag'
