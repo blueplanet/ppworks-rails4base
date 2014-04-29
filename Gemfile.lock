@@ -296,7 +296,7 @@ GEM
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
     sexp_processor (4.4.3)
-    shoulda-matchers (2.6.0)
+    shoulda-matchers (2.5.0)
       activesupport (>= 3.0.0)
     simple_form (3.0.2)
       actionpack (~> 4.0)
@@ -388,6 +388,7 @@ DEPENDENCIES
   kaminari
   launchy
   letter_opener
+  minitest
   newrelic_rpm
   pg
   poltergeist
@@ -406,7 +407,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0)
   sdoc (~> 0.4.0)
-  shoulda-matchers
+  shoulda-matchers (= 2.5.0)
   simple_form
   spring
   spring-commands-rspec
