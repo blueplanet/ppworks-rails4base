@@ -34,7 +34,11 @@ module Storable
 
     file = bucket.files.create(key: path_to_save, public: true, body: open_file_over_ssl(save_file))
 
-    storable_url = "#{ENV['CDN_HOST']}/#{path_to_save}"
+    if ENV['CDN_HOST'].present?
+      storable_url = "#{ENV['CDN_HOST']}/#{path_to_save}"
+    else
+      storable_url = "#{file.public_url}?#{Time.current.to_i}"
+    end
     create_thumbnail(bucket, path_to_save, storable_url)
 
     self.update_column(self.storable_file_column, storable_url)
