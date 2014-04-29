@@ -7,7 +7,11 @@ en:
     models:
     attributes:
       user:
+        name: 'Name'
+        email: 'E-mail'
+        password: 'Password'
         password_confirmation: 'Confirmation'
+        current_password: 'Current'
     errors:
       models:
   enumerize:
