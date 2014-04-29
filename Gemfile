@@ -10,6 +10,7 @@ gem 'pg'
 # Authentication
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-twitter'
 
 # APIs
 gem 'bugsnag'
