@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418082850) do
+ActiveRecord::Schema.define(version: 20140420071443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "connections", force: true do |t|
+    t.integer  "user_id",      null: false
+    t.string   "provider",     null: false
+    t.string   "uid",          null: false
+    t.string   "name",         null: false
+    t.string   "email"
+    t.string   "nickname"
+    t.string   "image"
+    t.string   "access_token"
+    t.string   "secret_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "connections", ["provider", "uid"], name: "index_connections_on_provider_and_uid", unique: true, using: :btree
+  add_index "connections", ["user_id"], name: "index_connections_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -34,6 +51,8 @@ ActiveRecord::Schema.define(version: 20140418082850) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "nickname"
+    t.string   "image"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

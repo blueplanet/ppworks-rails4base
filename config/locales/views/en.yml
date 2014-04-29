@@ -24,7 +24,7 @@ en:
         destroy: 'Sign out'
       unlocks:
         new: "Didn't receive unlock instructions?"
-      omniauth_authorize: 'Sign in with #{provider.to_s.titleize}'
+      omniauth_authorize: 'Sign in with %{provider}'
   i18n:
     title: 'Language'
     ja: 'Japanese'
