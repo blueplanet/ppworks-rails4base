@@ -24,7 +24,7 @@ ja:
         destroy: 'ログアウト'
       unlocks:
         new: "ロック解除メールの再送"
-      omniauth_authorize: '#{provider.to_s.titleize}アカウントでログイン'
+      omniauth_authorize: '%{provider}アカウントでログイン'
     user:
       edit: 'アカウント情報変更'
   i18n:
