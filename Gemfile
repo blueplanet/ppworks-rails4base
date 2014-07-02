@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 # Framework
-gem 'rails', '4.1.1'
+gem 'rails', '4.1.2'
 
 # Database
 gem 'pg'
@@ -64,7 +64,6 @@ group :development do
   gem 'pry-doc'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
-  gem 'pry-debugger'
   gem 'quiet_assets'
   gem 'tapp'
   gem 'view_source_map'
