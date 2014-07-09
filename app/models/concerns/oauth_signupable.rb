@@ -3,7 +3,11 @@ module OauthSignupable
 
   def self.extended(base)
     super
-    base.class.before_validation :__skip_confirmation!
+    base.class.before_validation do
+      if respond_to?(:skip_confirmation!)
+        skip_confirmation!
+      end
+    end
   end
 
   protected
@@ -15,12 +19,6 @@ module OauthSignupable
     false
   end
 
-  private
-  def __skip_confirmation!
-    if respond_to?(:skip_confirmation!)
-      skip_confirmation!
-    end
-  end
   module ClassMethods
   end
 end
