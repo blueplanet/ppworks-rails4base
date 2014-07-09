@@ -3,7 +3,6 @@ require 'rubygems'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'json_expressions/rspec'
 
 # Load all railties files
@@ -45,6 +44,9 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # Use file location for spec type
+  config.infer_spec_type_from_file_location!
+
   # For capybara
   require 'capybara/rspec'
   require 'capybara/poltergeist'
@@ -61,7 +63,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :truncation
   end
 
-  config.before(:each) do
+  config.before(:each) do |example|
     if example.metadata[:js]
       page.driver.resize(1024, 2048)
     end
@@ -74,7 +76,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :truncation
   end
 
-  config.after(:each) do
+  config.after(:each) do |example|
     DatabaseCleaner.clean
     if example.metadata[:js]
       load "#{Rails.root}/db/seeds.rb"
@@ -86,9 +88,6 @@ RSpec.configure do |config|
   config.include FeatureMacros, type: :feature
   config.include FactoryGirl::Syntax::Methods
   config.include Delorean
-
-  # metadata setting
-  config.treat_symbols_as_metadata_keys_with_true_values = true
 
   config.before(:all) do
     FactoryGirl.reload

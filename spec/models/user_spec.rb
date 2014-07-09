@@ -91,7 +91,7 @@ describe User do
         context 'connectionがない' do
           let!(:new_user) { build(:user) }
           before do
-            User.stub(:new).and_return(new_user)
+            allow(User).to receive(:new).and_return(new_user)
           end
           it { should eq new_user }
           it { should be_instance_of User }
@@ -105,12 +105,12 @@ describe User do
 
     context 'me' do
       let(:whoami) { user }
-      it { should be_true }
+      it { should be_truthy }
     end
 
     context 'other' do
       let(:whoami) { create(:user) }
-      it { should be_false }
+      it { should be_falsey }
     end
   end
 end

@@ -87,11 +87,13 @@ group :test, :development do
   gem 'poltergeist'
   gem 'rails-db-resetup'
   gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
+  gem 'rspec', '~> 3.0'
   gem 'rspec-rails'
   gem 'minitest'
   gem 'shoulda-matchers', '2.5.0'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'json_spec'
 end
 
 group :production, :staging do
