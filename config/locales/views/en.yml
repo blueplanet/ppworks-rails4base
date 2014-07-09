@@ -9,8 +9,8 @@ en:
     range: "%{begin_at} - %{end_at}"
     ago: ' ago'
   site_info:
-    title: 'Genuineblue'
-    description: 'Genuineblue'
+    title: 'appname'
+    description: 'appname'
   nav:
     devise:
       confirmations:

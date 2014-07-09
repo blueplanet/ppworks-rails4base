@@ -7,7 +7,7 @@ GITHUB_SCOPE: 'user'
 FACEBOOK_APP_ID: 'a'
 FACEBOOK_APP_SECRET: 'b'
 FACEBOOK_SCOPE: 'email'
-NEW_RELIC_APP_NAME: 'Genuineblue'
+NEW_RELIC_APP_NAME: 'appname'
 GA: 'UA-nnnnnnnn-m'
 GOOGLE_MAP_API_KEY: 'your key'
 test:
@@ -15,11 +15,11 @@ test:
   # forman
   #TEST_ASSET_HOST: 'http://localhost:3000'
 staging:
-  NEW_RELIC_APP_NAME: 'Genuineblue-stg'
+  NEW_RELIC_APP_NAME: 'appname-stg'
 production:
   BUGSNAG_API_KEY: ''
-  NEW_RELIC_APP_NAME: 'Genuineblue'
+  NEW_RELIC_APP_NAME: 'appname'
   NEWRELIC_DISPATCHER: 'Puma'
-  SESSION_KEY: '_Genuineblue_session'
+  SESSION_KEY: '_appname_session'
   SECRET_TOKEN: 'Be change this to `rake secret` result'
-  HOST: 'genuineblue.herokuapp.com'
+  HOST: 'appname.herokuapp.com'

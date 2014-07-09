@@ -1,9 +1,10 @@
-# Genuineblue tempate application for rails4.1
+# appname
 
 ## Rename application's name
 
 ```
-git grep -l 'Genuineblue'|xargs sed -i '' 's/Genuineblue/your_app_name/g'
+git grep -l 'module Appname'|xargs sed -i '' 's/Appname/Yourappname/g'
+git grep -l 'appname'|xargs sed -i '' 's/appname/yourappname/g'
 ```
 
 ## Setup for development
@@ -43,32 +44,32 @@ $ guard
 ## heroku
 
 ```
-heroku create Genuineblue
-git remote rename heroku Genuineblue
-git push Genuineblue master
+heroku create appname
+git remote rename heroku appname
+git push appname master
 heroku addons:add newrelic
 heroku addons:add pgbackups:auto-month
 heroku addons:add mandrill:starter
-rake figaro:heroku\[Genuineblue\]
+rake figaro:heroku\[appname\]
 ```
 
 ### staging
 
 ```
-heroku create Genuineblue-stg
-git remote set-url Genuineblue-stg git@heroku.com:Genuineblue-stg.git
-git push Genuineblue master
+heroku create appname-stg
+git remote set-url appname-stg git@heroku.com:appname-stg.git
+git push appname master
 heroku addons:add newrelic
 heroku addons:add pgbackups:auto-month
 heroku addons:add mandrill:starter
 heroku addons:add mailtrap
 heroku config:set RACK_ENV=staging RAILS_ENV=staging
-rake figaro:heroku\[Genuineblue-stg\]
+rake figaro:heroku\[appname-stg\]
 ```
 
 ## s3
 
-create 'Genuineblue' bucket on 'us-east-1'
+create 'appname' bucket on 'us-east-1'
 
 ### IAM
 
@@ -82,7 +83,7 @@ create 'Genuineblue' bucket on 'us-east-1'
         "s3:GetBucket*"
       ],
       "Resource": [
-        "arn:aws:s3:::Genuineblue"
+        "arn:aws:s3:::appname"
       ],
       "Effect": "Allow"
     },
@@ -93,7 +94,7 @@ create 'Genuineblue' bucket on 'us-east-1'
         "s3:PutObject*"
       ],
       "Resource": [
-        "arn:aws:s3:::Genuineblue/*"
+        "arn:aws:s3:::appname/*"
       ],
       "Effect": "Allow"
     }
@@ -107,5 +108,5 @@ Fill config/application.yml
 AWS_ACCESS_KEY_ID: ''
 AWS_SECRET_ACCESS_KEY: ''
 AWS_REGION: 'us-east-1'
-AWS_S3_BUCKET: 'Genuineblue'
+AWS_S3_BUCKET: 'appname'
 ```
