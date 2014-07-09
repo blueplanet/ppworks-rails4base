@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.2'
 
 # Framework
-gem 'rails', '4.1.2'
+gem 'rails', '4.1.4'
 
 # Database
 gem 'pg'
