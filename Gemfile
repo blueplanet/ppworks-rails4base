@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 # Framework
-gem 'rails', '4.1.7'
+gem 'rails', '4.1.8'
 
 # Database
 gem 'pg'
@@ -37,7 +37,7 @@ gem 'mini_magick'
 
 # Views
 gem 'bootstrap-sass'
-gem 'compass-rails'
+gem 'compass-rails', '2.0.0' #FIXME: Fix if solved "wrong number of arguments (2 for 1) in main.css.sass"
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'simple_form'
@@ -81,7 +81,6 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'guard-rspec', require: false
-  gem 'guard-sprockets2'
   gem 'json_expressions'
   gem 'launchy'
   gem 'poltergeist'
