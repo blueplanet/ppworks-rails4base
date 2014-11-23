@@ -81,7 +81,6 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'guard-rspec', require: false
-  gem 'guard-sprockets2'
   gem 'json_expressions'
   gem 'launchy'
   gem 'poltergeist'

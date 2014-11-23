@@ -195,9 +195,6 @@ GEM
     guard-rspec (4.3.1)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
-    guard-sprockets2 (0.0.6)
-      guard
-      sprockets (~> 2.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -482,7 +479,6 @@ DEPENDENCIES
   fog
   font-awesome-rails
   guard-rspec
-  guard-sprockets2
   haml-rails
   hirb
   hirb-unicode
