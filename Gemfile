@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 # Framework
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
+gem 'responders', '~>2.0'
 
 # Database
 gem 'pg'
@@ -53,6 +54,7 @@ end
 
 group :development do
   # Debugs
+  gem 'web-console', '~> 2.0'
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -87,7 +89,7 @@ group :test, :development do
   gem 'rails-db-resetup'
   gem 'rb-fsevent', require: RUBY_PLATFORM.downcase =~ /darwin/ ? 'rb-fsevent' : false
   gem 'rspec', '~> 3.0'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.1'
   gem 'minitest'
   gem 'shoulda-matchers', '2.5.0'
   gem 'spring'
