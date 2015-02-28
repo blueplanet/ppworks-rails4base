@@ -5,7 +5,7 @@ describe Connection do
 
   subject(:connection) { create(:connection, user: user) }
 
-  describe 'コネクションを作成できる' do
+  describe '#create' do
     specify { expect(connection).to be_instance_of Connection }
   end
 

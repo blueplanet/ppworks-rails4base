@@ -19,7 +19,7 @@ describe User do
     }
   }
 
-  describe 'Create user' do
+  describe '#create' do
     subject { user }
     it { expect(subject).to be_instance_of(User) }
   end
@@ -28,18 +28,18 @@ describe User do
     it { should have_many(:connections) }
   end
 
-  describe 'メールアドレス、パスワード空のユーザー登録' do
+  describe 'create user with no email & password' do
     let(:user) { build(:user, email: nil, password: nil) }
-    context 'OauthSignupableを実装していない' do
-      it 'ユーザーが増えない' do
+    context 'when include OauthSignupable' do
+      it do
         expect {
           user.save
         }.to change(User, :count).by(0)
       end
     end
 
-    context 'OauthSignupableを実装している' do
-      it 'ユーザーが1人増えること' do
+    context 'when not include OauthSignupable' do
+      it do
         expect {
           user.extend OauthSignupable
           user.save
@@ -53,16 +53,16 @@ describe User do
     let(:current_user) { nil }
     subject { User.authentication(auth_hash, current_user) }
 
-    context 'auth_hashがない' do
+    context 'when not exist auth_hash' do
       it { should be_nil }
     end
 
-    context 'auth_hashがある' do
+    context 'when exists auth_hash' do
       let(:auth_hash) { valid_auth_hash }
 
-      context 'current_userがいる(ログイン中の場合)' do
+      context 'if signed in' do
         let(:current_user) { user }
-        context 'connectionがある' do
+        context 'and the user has connection' do
           let(:connection) { build(:connection) }
           before do
             user.connections << connection
@@ -71,14 +71,14 @@ describe User do
           it { should be_instance_of User }
         end
 
-        context 'connectionがない' do
+        context 'and the user has not connection' do
           it { should eq user }
           it { should be_instance_of User }
         end
       end
 
-      context 'current_userがいない(未ログインの場合)' do
-        context 'connectionがある' do
+      context 'if not signed in' do
+        context 'and the user has connection' do
           before do
             connection = user.connections.last
             connection.uid = auth_hash['uid']
@@ -88,7 +88,7 @@ describe User do
           it { should be_instance_of User }
         end
 
-        context 'connectionがない' do
+        context 'and the user has not connection' do
           let!(:new_user) { build(:user) }
           before do
             allow(User).to receive(:new).and_return(new_user)
