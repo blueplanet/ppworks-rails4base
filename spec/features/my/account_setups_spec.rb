@@ -1,36 +1,38 @@
 require 'rails_helper'
 
 describe 'My/Setups' do
-  let(:user) { create(:user, :with_unread) }
 
-  describe '/にアクセスする' do
-    before do
+  feature '/' do
+    background do
       sign_in(user)
       visit root_path
     end
-    it 'セットアップ画面に飛ぶ' do
-      expect(current_path).to eq my_account_setup_path
-    end
 
-    describe '情報を入力する' do
+    context 'when a user has not set up own profile' do
+      let(:user) { create(:user, :has_not_setup) }
       let(:new_user) { build(:user) }
-      before do
+
+      scenario 'redirect to setup page' do
+        expect(current_path).to eq my_account_setup_path
+      end
+
+      scenario 'fill profile' do
         find('#user_name').set(new_user.name)
         find("#edit_user_#{user.id} input[type=submit]").click()
-      end
-      it 'ヘッダにユーザー名が表示されること' do
         within '.navbar' do
           expect(page).to have_content(new_user.name)
         end
-      end
 
-      describe '/にアクセスする' do
-        before do
-          visit root_path
-        end
-        it 'セットアップ画面に飛ぶない' do
-          expect(current_path).to eq root_path
-        end
+        visit root_path
+        expect(current_path).to eq root_path
+      end
+    end
+
+    context 'when a user has set up own profile' do
+      let(:user) { create(:user) }
+
+      scenario "doesn't redirect" do
+        expect(current_path).to eq root_path
       end
     end
   end

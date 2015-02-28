@@ -6,7 +6,7 @@ FactoryGirl.define do
     name { Faker::Name.name }
     email
     password { 'password' }
-    trait :with_unread do
+    trait :has_not_setup do
       name nil
     end
   end
