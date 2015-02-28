@@ -521,7 +521,7 @@ DEPENDENCIES
   bullet
   capybara
   coffee-rails (~> 4.0)
-  compass-rails (= 2.0.0)
+  compass-rails
   database_rewinder
   delorean
   devise

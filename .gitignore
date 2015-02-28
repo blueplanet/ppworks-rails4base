@@ -18,6 +18,7 @@
 /public/system/*
 /spec/tmp/*
 /tmp/*
+/vendor/assets/bower_components
 /vendor/bin
 /vendor/bundle
 Guardfile
