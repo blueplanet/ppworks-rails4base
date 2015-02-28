@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140420071443) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "connections", force: true do |t|
+  create_table "connections", force: :cascade do |t|
     t.integer  "user_id",      null: false
     t.string   "provider",     null: false
     t.string   "uid",          null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140420071443) do
   add_index "connections", ["provider", "uid"], name: "index_connections_on_provider_and_uid", unique: true, using: :btree
   add_index "connections", ["user_id"], name: "index_connections_on_user_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
