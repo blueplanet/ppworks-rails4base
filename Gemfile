@@ -24,6 +24,7 @@ gem 'sass-rails',   '~> 4.0'
 gem 'coffee-rails', '~> 4.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails'
+gem 'bower-rails'
 
 # Helpers
 gem 'active_decorator'
@@ -37,10 +38,7 @@ gem 'fog'
 gem 'mini_magick'
 
 # Views
-gem 'bootstrap-sass'
-gem 'compass-rails', '2.0.0' #FIXME: Fix if solved "wrong number of arguments (2 for 1) in main.css.sass"
-gem 'font-awesome-rails'
-gem 'jquery-rails'
+gem 'compass-rails'
 gem 'simple_form'
 gem 'kaminari'
 
