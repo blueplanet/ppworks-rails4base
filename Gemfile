@@ -62,10 +62,6 @@ group :development do
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'letter_opener'
-  gem 'pry-byebug'
-  gem 'pry-doc'
-  gem 'pry-rails'
-  gem 'pry-stack_explorer'
   gem 'quiet_assets'
   gem 'tapp'
   gem 'view_source_map'
@@ -95,6 +91,12 @@ group :test, :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'json_spec'
+
+  # Debug
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 
 group :production, :staging do
