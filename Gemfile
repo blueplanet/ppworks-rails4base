@@ -77,7 +77,7 @@ group :test, :development do
   # TDD
   gem 'brakeman'
   gem 'capybara'
-  gem 'database_cleaner'
+  gem 'database_rewinder'
   gem 'delorean'
   gem 'factory_girl'
   gem 'factory_girl_rails'
