@@ -3,6 +3,6 @@ class My::BaseController < ApplicationController
 
   private
   def set_user
-    @user = User.find(current_user)
+    @user = User.find(current_user.id)
   end
 end
