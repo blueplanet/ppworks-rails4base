@@ -100,17 +100,17 @@ describe User do
     end
   end
 
-  describe '#me?' do
-    subject { user.me?(whoami) }
+  describe '#mine?' do
+    subject { user.mine?(whoami) }
 
-    context 'me' do
+    context 'mine' do
       let(:whoami) { user }
-      it { should be_truthy }
+      it { should be true }
     end
 
-    context 'other' do
+    context "other's" do
       let(:whoami) { create(:user) }
-      it { should be_falsey }
+      it { should be false }
     end
   end
 end
