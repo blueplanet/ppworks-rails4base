@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
     self.name.present?
   end
 
-  def me?(user)
+  def mine?(user)
     return self.id == user.try(:id)
   end
 
