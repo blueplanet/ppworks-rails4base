@@ -13,6 +13,8 @@ rename Guardfile.example to Guardfile
 
 ```
 $ cp Guardfile.example Guardfile
+$ npm install -g bower
+$ bin/rake bower:install
 ```
 
 ## External API Credential
